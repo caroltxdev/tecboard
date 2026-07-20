@@ -17,7 +17,6 @@ export function FormularioDeEvento () {
     <CampoDeEntrada
     type="text"
     id="nome"
-    placeholder="Summer dev hits"
     name='nomeEvento'
     />
 
