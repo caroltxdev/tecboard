@@ -1,6 +1,6 @@
 export function Label ({ children }) {
   return(
-    <label>
+    <label className="text-white p-2 ">
       {children}
     </label>
   )

@@ -1,37 +1,52 @@
+import { Botao } from "../Botao";
 import { CampoDeEntrada } from "../CampoDeEntrada";
 import { CampoDeFormulario } from "../CampoDeFormulario";
-import { Label } from "../Label/indes";
+import { Label } from "../Label";
+import { ListaSuspensa } from "../ListaSuspensa";
 import { TituloFormulario } from "../TituloFormulario";
 
 export function FormularioDeEvento () {
   return (
-    <form style={{background: '#212121'}} className='P-5 rounded-md w-384 max-w-[90%] mt-10 m-auto' >
+    <form style={{background: '#212121'}} className='rounded-md max-w-[90%] mt-10 m-auto' >
       <TituloFormulario>
         Preencha para criar um evento:
       </TituloFormulario>
 
-    <CampoDeFormulario>
-        <Label htmlFor="nome">
-          Qual é o nome do evento?
-        </Label>
-    <CampoDeEntrada
-    type="text"
-    id="nome"
-    name='nomeEvento'
-    />
+    <div className="p-5 flex flex-col gap-4">
+      <CampoDeFormulario>
+          <Label htmlFor="nome">
+            Qual é o nome do evento?
+          </Label>
+              <CampoDeEntrada
+              type="text"
+              id="nome"
+              name='nomeEvento'
+              />
+      </CampoDeFormulario>
+      <CampoDeFormulario>
+          <Label htmlFor="data">
+            Data do evento
+          </Label>
+              <CampoDeEntrada
+              type="date"
+              id="data"
+              name='dataEvento'
+              />
+      </CampoDeFormulario>
+      <CampoDeFormulario>
+          <Label htmlFor="tema">
+            Tema do evento
+          </Label>
+              <ListaSuspensa />
+      </CampoDeFormulario>
+    </div>
 
-        <input type="text" id='nome' placeholder='Pixel show' />
-    </CampoDeFormulario>
+    <div className="text-center mb-5 p-7">
+      <Botao>
+        Criar evento
+      </Botao>
+    </div>
 
-      <fieldset>
-        <label htmlFor="data">Data do evento</label>
-        <input type="text" id='data' placeholder='xx/xx/xxxx' />
-      </fieldset>
-
-      <fieldset>
-        <label htmlFor="tema">Tema do evento</label>
-        <select name="tema" id="inicio">Selecione uma opção</select>
-      </fieldset>
     </form>
   )
 }
