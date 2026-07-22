@@ -1,6 +1,16 @@
-export function ListaSuspensa() {
+export function ListaSuspensa({ itens, ...rest }) {
     return (
-        <select name="" id="" className="rounded-sm bg-transparent w-[60%] border-1 p-2 text-white placeholder:text-gray-400 ">
+        <select {...rest} className="rounded-sm bg-transparent w-[60%] border p-2 text-white placeholder:text-gray-400 " defaultValue="">
+
+            <option value="" disabled>
+                Selecione uma opção
+            </option>
+            
+            {itens.map((item) => {
+            return <option key={item.id} value={item.id} className="text-black uppercase">
+                {item.nome}
+            </option>
+            })}
 
         </select>
     )
